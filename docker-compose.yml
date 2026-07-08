@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mc_apache
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./code:/app
+    command: sh -c "npm run dev"
